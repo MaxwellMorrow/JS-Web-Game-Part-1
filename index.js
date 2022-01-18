@@ -1,29 +1,28 @@
 
-function newImage(newImgName, imgSrc , imgLeft , imgBottom  ){
-    var newImgName = document.createElement('img')
-    newImgName.src = imgSrc
-    newImgName.style.position = 'fixed'
-    newImgName.style.left = imgLeft
-    newImgName.style.bottom = imgBottom
-document.body.append(newImgName)
-    newImgName.addEventListener("dblclick", function(){
-    newImgName.remove()})
+function newImage( imgSrc , imgLeft , imgBottom  ){
+    let object = document.createElement('img')
+    object.src = imgSrc
+    object.style.position = 'fixed'
+    object.style.left = imgLeft + "px"
+    object.style.bottom = imgBottom + "px"
+document.body.append(object)
+   return object
 }
 
 
 
-function newItem(newImgName, imgSrc , imgLeft , imgBottom){
-    newImage(newImgName, imgSrc , imgLeft , imgBottom);
-    newImgName.addEventListener("dblclick", function(){
-    newImgName.remove()})
+function newItem( imgSrc , imgLeft , imgBottom){
+    let object = newImage( imgSrc , imgLeft , imgBottom);
+    object.addEventListener("dblclick", function(){
+    object.remove()})
 }
 
-newImage("tree","assets/tree.png","300px","300px")
-newImage("pillar","assets/pillar.png","350px","100px")
-newImage("crate","assets/crate.png","150px","200px")
-newImage("well","assets/well.png","500px","425px")
-newImage("greenCharacter","assets/green-character.gif","200px","200px")
-newImage("pine-tree","assets/pine-tree.png","450px","200px")
-newItem("sword","assets/sword.png","500px","405px")
-newItem("shield","assets/sheild.png","165px","185px")
-newItem("staff","assets/staff.png","600px","100px")
+newImage("assets/tree.png","300","300")
+newImage("assets/pillar.png","350","100")
+newImage("assets/crate.png","150","200")
+newImage("assets/well.png","500","425")
+newImage("assets/green-character.gif","200","200")
+newImage("assets/pine-tree.png","450","200")
+newItem("assets/sword.png","500","405")
+newItem("assets/sheild.png","165","185")
+newItem("assets/staff.png","600","100")
